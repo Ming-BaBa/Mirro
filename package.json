@@ -1,0 +1,43 @@
+{
+  "name": "mirro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist-electron/electron/main.js",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:electron": "concurrently -k \"vite --host 127.0.0.1\" \"wait-on http://127.0.0.1:5173 && npm run build:electron && npm run rebuild:electron && VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .\"",
+    "build": "tsc --noEmit && vite build && npm run build:electron && npm run rebuild:electron",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "rebuild:electron": "npx @electron/rebuild",
+    "test": "npm rebuild better-sqlite3 uiohook-napi 2>/dev/null; vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "active-win": "^9.0.0",
+    "better-sqlite3": "^11.0.0",
+    "node-cron": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "uiohook-napi": "^1.5.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.4",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.0.0",
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^24.0.0",
+    "@types/node-cron": "^3.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.0.0",
+    "electron": "^37.0.0",
+    "jsdom": "^26.0.0",
+    "typescript": "^5.8.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0",
+    "wait-on": "^8.0.0"
+  }
+}
