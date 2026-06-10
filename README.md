@@ -1,5 +1,7 @@
 # Mirro
 
+<img src="preview.png" width="600" alt="Mirro 预览图" />
+
 本地桌面自我认知工具。通过静默记录电脑使用行为，AI 分析帮助用户发现无意识的行为模式。一只桌面小猫 Mirro 以陪伴的方式传递洞察。
 
 ## 它做什么
@@ -117,4 +119,4 @@ npm run build
 
 ## License
 
-MIT
+All rights reserved.
